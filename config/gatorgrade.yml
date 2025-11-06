@@ -1,0 +1,133 @@
+# perform checks on a file
+
+# check the technical writing for various characteristics
+- writing/reflection.md:
+    - description: Ensure that writing/reflection.md file exists.
+      check: ConfirmFileExists
+    - description: Write a minimum number of meaningful words (>400) in the reflection
+      check: CountFileWords
+      options:
+        count: 400
+        exact: false
+    - description: Complete all TODOs, remove the TODO markers in writing/reflection.md
+      check: MatchFileFragment
+      options:
+        fragment: TODO
+        count: 0
+        exact: true
+    - description: Delete the 'Add Your Name Here' prompt in writing/reflection.md
+      check: MatchFileFragment
+      options:
+        fragment: "Add Your Name Here"
+        count: 0
+        exact: true
+
+# check the main program file
+- ./main.py:
+    - description: Ensure that ./main.py file exists.
+      check: ConfirmFileExists
+    - description: Complete all TODOs, remove the TODO markers in ./main.py
+      check: MatchFileFragment
+      options:
+        fragment: TODO
+        count: 0
+        exact: true
+    - description: Delete the 'Add Your Name Here' prompt in the ./main.py file
+      check: MatchFileFragment
+      options:
+        fragment: "Add Your Name Here"
+        count: 0
+        exact: true
+    # - description: Use pandas for CSV file reading
+    #   check: MatchFileFragment
+    #   options:
+    #     fragment: "import pandas as pd"
+    #     count: 1
+    #     exact: true
+    # - description: Use matplotlib for plotting
+    #   check: MatchFileFragment
+    #   options:
+    #     fragment: "import matplotlib.pyplot as plt"
+    #     count: 1
+    #     exact: true
+    # - description: Include numpy for numerical operations
+    #   check: MatchFileFragment
+    #   options:
+    #     fragment: "import numpy as np"
+    #     count: 1
+    #     exact: true
+
+
+# check the modules dataloader program file
+- ./modules/data_loader.py:
+    - description: Ensure that ./modules/data_loader.py file exists.
+      check: ConfirmFileExists
+    - description: Complete all TODOs, remove the TODO markers in ./modules/data_loader.py
+      check: MatchFileFragment
+      options:
+        fragment: TODO
+        count: 0
+        exact: true
+    - description: Delete the 'Add Your Name Here' prompt in the ./modules/data_loader.py file
+      check: MatchFileFragment
+      options:
+        fragment: "Add Your Name Here"
+        count: 0
+        exact: true
+# check the modules plotter program file
+- ./modules/plotting.py:
+    - description: Ensure that ./modules/plotting.py file exists.
+      check: ConfirmFileExists
+    - description: Complete all TODOs, remove the TODO markers in ./modules/plotting.py
+      check: MatchFileFragment
+      options:
+        fragment: TODO
+        count: 0
+        exact: true
+    - description: Delete the 'Add Your Name Here' prompt in the ./modules/plotting.py file
+      check: MatchFileFragment
+      options:
+        fragment: "Add Your Name Here"
+        count: 0
+        exact: true
+
+# check the modules controller program file
+- ./modules/transformations.py:
+    - description: Ensure that ./modules/transformations.py file exists.
+      check: ConfirmFileExists
+    - description: Complete all TODOs, remove the TODO markers in ./modules/transformations.py
+      check: MatchFileFragment
+      options:
+        fragment: TODO
+        count: 0
+        exact: true
+    - description: Delete the 'Add Your Name Here' prompt in the ./modules/transformations.py file
+      check: MatchFileFragment
+      options:
+        fragment: "Add Your Name Here"
+        count: 0
+        exact: true
+
+# check the modules controller program file
+- ./modules/__init__.py:
+    - description: Ensure that ./modules/__init__.py file exists.
+      check: ConfirmFileExists
+
+# check that data files exist
+- data/temperature_data.csv:
+    - description: Ensure that temperature data file exists.
+      check: ConfirmFileExists
+
+- data/population_data.csv:
+    - description: Ensure that population data file exists.
+      check: ConfirmFileExists
+
+- data/stock_prices.csv:
+    - description: Ensure that stock price data file exists.
+      check: ConfirmFileExists
+
+# count number of commits in the GitHub repository
+- description: Have at least a specific minimum number of commits (5) in repository
+  check: CountCommits
+  options:
+    count: 5
